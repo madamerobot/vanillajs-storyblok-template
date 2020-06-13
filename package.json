@@ -1,0 +1,24 @@
+{
+	"name": "storyblok-vanillajs",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/madamerobot/vanillajs-storyblok-template.git"
+	},
+	"author": "Valerie Fuchs",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/madamerobot/vanillajs-storyblok-template/issues"
+	},
+	"homepage": "https://github.com/madamerobot/vanillajs-storyblok-template#readme"
+}
