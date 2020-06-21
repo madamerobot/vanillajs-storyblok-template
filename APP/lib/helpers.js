@@ -17,3 +17,17 @@ export const getAllEntries = async () => {
 	const storyblokData = await getStoryblokData;
 	return storyblokData;
 };
+
+export const getEntryBySlug = async (slug) => {
+	const getStoryblokData = new Promise((resolve, reject) => {
+		storyblok.get(`cdn/stories/posts/${slug}`, (data, err) => {
+			if (data) {
+				resolve(data);
+			} else {
+				reject('Sorry we couldnt fetch any data', err);
+			}
+		});
+	});
+	const storyblokData = await getStoryblokData;
+	return storyblokData;
+};
