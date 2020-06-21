@@ -53,14 +53,27 @@ export class MainApp extends HTMLElement {
 				background: blue;
 				color: white;
 			}
+			.yellow-bg {
+				background: yellow;
+			}
+			.white-bg {
+				background: white;
+			}
 		`;
 		this.shadowRoot.appendChild(style);
 	}
 
 	appendEventListeners() {
 		this._button = this.shadowRoot.querySelector('button');
+		const wrapper = this.shadowRoot.querySelector('.wrapper');
 		this._button.addEventListener('click', function() {
-			console.log('click');
+			if (wrapper.classList.contains('white-bg')) {
+				wrapper.classList.remove('white-bg');
+				wrapper.classList.add('yellow-bg');
+			} else {
+				wrapper.classList.remove('yellow-bg');
+				wrapper.classList.add('white-bg');
+			}
 		});
 	}
 
@@ -70,12 +83,12 @@ export class MainApp extends HTMLElement {
 		} else {
 			this.shadowRoot.innerHTML = `
 				<div class="layout-container">
-					<div class="wrapper">
-						<h2>Storyblok x Web Components</h2>
+					<div class="wrapper white-bg">
+						<h2>Storyblok x Custom Elements</h2>
 						<p>
 							This is a very basic example to show how to use Storyblok
-							with Custom Elements (Web Components). Below I am rendering
-							out the names of Storyblok entries coming from a Test Space.
+							with Custom Elements (<a href="https://developers.google.com/web/fundamentals/web-components/customelements" target=_blank>Web Components</a>).
+							Below I am rendering out the names of Storyblok entries coming from a Test Space.
 						</p>
 						<ul>
 							${this._data
@@ -84,7 +97,7 @@ export class MainApp extends HTMLElement {
 								})
 								.join('')}
 						</ul>
-						<button>⟶ Toggle data</button>
+						<button>⟶ Toggle style</button>
 					</div>
 				</div>
 			`;
