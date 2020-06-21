@@ -86,7 +86,7 @@ export class MainApp extends HTMLElement {
 					<div class="wrapper white-bg">
 						<h2>Storyblok x Custom Elements</h2>
 						<p>
-							This is a very basic example to show how to use Storyblok
+							Simple example to show how to use Storyblok
 							with Custom Elements (<a href="https://developers.google.com/web/fundamentals/web-components/customelements" target=_blank>Web Components</a>).
 							Below I am rendering out the names of Storyblok entries coming from a Test Space.
 						</p>
